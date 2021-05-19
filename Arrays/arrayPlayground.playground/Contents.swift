@@ -78,10 +78,55 @@ print(createdArray)
 let mappedArray = createdArray.map({ value in
     return value * 2
 })
-/// same as mapped
+/// same as above
+/// 1)
 var newArray: [Int] = []
 for value in createdArray {
     newArray.append(value * 2)
 }
+/// 2)
+let myClosure01: (Int) -> Int = { value in
+    return value * 2
+}
+let mappedArray01 = createdArray.map(myClosure01)
+/// 3)
+let mappedArray02 = createdArray.map { $0 * 2 }
+
+print(mappedArray02)
+
 print(mappedArray)
 print(newArray)
+
+
+/// Functions
+func myFunc(with input: Int) {
+    print(input)
+}
+
+myFunc(with: 5)
+
+// 1st label: external label
+// 2nd label: internal label
+// "parameter list"
+func noParaName(_ input: Int) {
+    print(input)
+}
+noParaName(8)
+
+let myClosure: () -> Void = {
+    print("in closure")
+}
+
+// calling myClosure
+myClosure()
+myClosure
+
+// "Capture list": purpleUnicorn
+let intClosure: (Int) -> Void = { purpleUnicorn in
+    print(purpleUnicorn)
+}
+intClosure(10)
+
+//let myDictionary: [String: String] = [:]
+
+
