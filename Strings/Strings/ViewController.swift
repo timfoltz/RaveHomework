@@ -13,7 +13,9 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        tester.printPigLatin(word: "racecar")
+        print("pally test")
+        tester.isPalindrome(word: "racecar")
     }
 
 
