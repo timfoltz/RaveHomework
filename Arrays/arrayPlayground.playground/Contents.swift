@@ -113,20 +113,97 @@ func noParaName(_ input: Int) {
 }
 noParaName(8)
 
+/// Closures
 let myClosure: () -> Void = {
     print("in closure")
 }
 
 // calling myClosure
 myClosure()
-myClosure
 
-// "Capture list": purpleUnicorn
+// "Capture list": purpleUnicorn in
 let intClosure: (Int) -> Void = { purpleUnicorn in
     print(purpleUnicorn)
 }
 intClosure(10)
 
 //let myDictionary: [String: String] = [:]
+
+let myFuncClosure: (Int) -> Void = { num in
+    print("Inside of a closure \(num)")
+}
+func bar() {
+    myFuncClosure(99)
+}
+bar()
+
+func foo(input: Int, closure: (Int) -> Void) {
+    closure(input)
+}
+
+foo(input: 88, closure: myFuncClosure)
+
+func foobar(input: Int, closure: (Int) -> Void) {
+    closure(input)
+}
+
+/// Trailing closure syntax
+foobar(input: 88, closure: { num in print(num) })
+foobar(input: 88) { num in
+    print(num)
+}
+// Multiple Trailing closure syntax
+func foobarTwo(input: Int, closure: (Int) -> Void, closureTwo: () -> Void) {
+    closure(input)
+    closureTwo()
+}
+
+foobarTwo(input: 77) { num in
+    print(num)
+} closureTwo: {
+    print(66)
+}
+
+let updateClosure = { str in
+    print(str)
+}
+func updateUI(completionHandler: (String) -> Void) {
+    // do some compute
+    let name = "this"
+    let lname = "that"
+    let fulname = name.uppercased() + lname
+    completionHandler(fulname)
+}
+
+updateUI(completionHandler: updateClosure)
+updateUI(completionHandler: { string in
+    print(string)
+})
+updateUI { string in
+    print(string + "90")
+}
+
+//higher order func
+let mySimpleArray = [1,2,3,4,5]
+let triple = mySimpleArray.map { num in
+    return num * 3
+}
+// same as
+let tripleV2 = mySimpleArray.map { $0 * 3 }
+
+print(triple)
+let filtered = mySimpleArray.filter { $0 % 2 == 0 }
+print(filtered)
+
+let sum = mySimpleArray.reduce(0) { accumlation, second in
+    accumlation + second
+}
+print(sum)
+
+let sumTwo = mySimpleArray.reduce(1, *)
+print("two", sumTwo)
+
+let sumThree = mySimpleArray.reduce(1, {$0 * $1})
+print("three", sumThree)
 
 

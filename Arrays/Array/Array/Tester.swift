@@ -66,6 +66,10 @@ class Tester {
         return 0
     }
     
+    func pigLatinSentence(sentence: String) -> String {
+        return ""
+    }
+    
     /** Find the best day to first BUY and then a day occuring after that day to SELL. Return the maximum profit ( buy price - sell price)
         var prices = [7,1,5,3,6,4]  //returns 5
      */

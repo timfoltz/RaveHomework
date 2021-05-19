@@ -89,15 +89,4 @@ class StringsTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "\n Result: \(result) \n Expected: \(expected)")
     }
-    
-//    func testPigSentence() {
-//        input = "welcome to day one"
-//        let expected = "elcomeway otay ayday oneyay"
-//
-//        _ = tester.printPigLatinSentence(sentence: input)
-//        let result = tester.printedString
-//
-//        XCTAssertEqual(result, expected, "\n Result: \(result) \n Expected: \(expected)")
-//    }
-
 }

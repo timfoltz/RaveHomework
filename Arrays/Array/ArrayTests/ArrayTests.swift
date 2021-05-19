@@ -74,6 +74,15 @@ class ArrayTests: XCTestCase {
         XCTAssertEqual(result, expected, "\n Result: \"\(result)\" \n Expected: \"\(expected)\"")
     }
     
+    func testPigSentence() {
+        let input = "welcome to day one"
+        let expected = "elcomeway otay ayday oneyay"
+
+        let result =  tester.pigLatinSentence(sentence: input)
+
+        XCTAssertEqual(result, expected, "\n Result: \(result) \n Expected: \(expected)")
+    }
+    
     func testMaxProfit() {
         let prices = [7,1,5,3,6,4]
         let expected = 5
@@ -91,4 +100,5 @@ class ArrayTests: XCTestCase {
         
         XCTAssertEqual(result, expected, "\n Result: \"\(result)\" \n Expected: \"\(expected)\"")
     }
+    
 }
