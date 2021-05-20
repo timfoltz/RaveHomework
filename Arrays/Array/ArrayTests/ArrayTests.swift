@@ -67,7 +67,7 @@ class ArrayTests: XCTestCase {
     
     func testMinimumChairs() {
         let input: [Character] = ["I", "O", "I", "I", "O"]
-        let expected = 3
+        let expected = 2
     
         let result = tester.minimumChairs(array: input)
         
