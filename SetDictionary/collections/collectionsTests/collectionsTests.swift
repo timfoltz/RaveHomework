@@ -108,10 +108,10 @@ class collectionsTests: XCTestCase {
     
     /// Optionals: use nil coalescing
     func testUnwrapDictionary() throws {
-        let input: [Int: Int]? = [1: 100]
-        let expected = 100
+        let input: [Int: Int]? = [1: 100,3:200,5:20]
+        let expected = 20
     
-        let result = tester.unwrap(optional: input, key: 1)
+        let result = tester.unwrap(optional: input, key: 5)
         
         XCTAssertEqual(result, expected, "\n Result: \"\(result)\" \n Expected: \"\(expected)\"")
     }
