@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+enum Skill {
+    case iOSDeveloper
+    case AndroidDeveloper
+    case QA
+    case Ux
+    case ProjectManager
+    case TechLead
+    case Architech
+}
+
+enum PayRate {
+    case normal
+    case high
+}
