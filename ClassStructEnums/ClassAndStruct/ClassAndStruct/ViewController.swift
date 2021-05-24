@@ -19,9 +19,11 @@ class ViewController: UIViewController {
         // Create a project manager
         // Call projectManager.startTask() to start work
         
+        let projectManager = ProjectManager()
+        projectManager.startTasks()
+//        print(Team.shared.taskList[0])
         // All valid tasks should be completed to print money
         // Print "BRRRRRR"
-        
         myTeam.printMoney()
     }
 

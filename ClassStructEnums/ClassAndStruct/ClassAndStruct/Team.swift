@@ -13,6 +13,7 @@ class Team {
     static let shared = Team()
     
     var employees: [Employee] = []
+    var skills: [Skill] = []
     var taskList: [Task] = []
     
     func createTeam() {
@@ -26,6 +27,9 @@ class Team {
             Employee(skills: [uX], payRate: .normal),
             Employee(skills: [qA], payRate: .normal),
         ]
+        for emp in employees {
+            skills.append(contentsOf: emp.skills)
+        }
     }
     
     func createWeeklyTask() {
@@ -45,9 +49,11 @@ class Team {
         let validTasks = taskList.filter { task in
             task.isValid
         }
+        print("valid tasks",validTasks.count)
         let remainingTasks = validTasks.filter { task in
             task.isCompleted == false
         }
+        print("remaining tasks",remainingTasks.count)
         while remainingTasks.count == 0 {
             print("BRRRRRRRRRRRRRRRRRRRRRRRRRRRRR")
         }
@@ -66,5 +72,6 @@ class Team {
 //            print("You don't have access")
 //        }
 //    }
+    
     
 }

@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Skill {
+enum Skill: String {
     case iOSDeveloper
     case AndroidDeveloper
     case QA
