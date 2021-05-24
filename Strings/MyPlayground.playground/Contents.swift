@@ -5,7 +5,7 @@ import UIKit
 
 let char: Character = "a"
 let string: String = "aa"
-let myCastedChar = Character(string)
+//let myCastedChar = Character(string)
 //if char == string {
 //
 //}
@@ -40,22 +40,30 @@ for num in stride(from: 10, to: 0, by: -1) {
     print(num)
 }
 
-let greeting = "Hello" //count is 5
+let greeting = "Hello😅✝️₴" //count is 5
+print(greeting.count)
 let myStartIndex = greeting.startIndex
+greeting[myStartIndex] // "H"
 for i in 0..<greeting.count {
 // i => 0, 1, 2, 3, 4
     let myOffsetIndex = greeting.index(myStartIndex, offsetBy: i)
     print(greeting[myOffsetIndex])
-    greeting.replacingOccurrences(of: "e", with: "o")
-//    print(greeting[i])
+
+    let currentChar = greeting[myOffsetIndex]
+    if currentChar == "l" {
+        
+    }
 }
 greeting[myStartIndex]  // H
 let myOffsetIndex = greeting.index(myStartIndex, offsetBy: 3)
 print(greeting[myOffsetIndex])
 //greeting[myStartIndex + 3]
 
+greeting.replacingOccurrences(of: "e", with: "o")
+let new = greeting.replacingCharacters(in: greeting.startIndex..<greeting.index(after: greeting.startIndex), with: "ab")
+print(new, "changed")
 
-
+print(greeting[greeting.startIndex...greeting.index(after: greeting.startIndex)] == new)
 
 
 

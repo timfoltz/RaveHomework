@@ -157,17 +157,11 @@ if intFromString == num {
     print("this is not suppose to work")
 }
 
-
-
-
-
-
-
-
-
 //switch optInt {
 //case .none:
 //    print("nothing")
 //case .some(let value):
 //    print(value)
 //}
+
+
