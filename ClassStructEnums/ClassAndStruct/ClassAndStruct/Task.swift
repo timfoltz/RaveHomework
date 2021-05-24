@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class Task {
+
+    let skillReq: Skill
+    let timeReq: Int
+    var isCompleted: Bool = false
+    var isValid: Bool = true
+    
+    init(timeReq: Int, skillReq: Skill) {
+        self.timeReq = timeReq
+        self.skillReq = skillReq
+    }
+}
