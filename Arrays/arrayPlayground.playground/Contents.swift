@@ -45,6 +45,16 @@ for anyNAME in simple {
 }
 print("==========")
 let subArray = simple[2...3]
+let newSimple = ["a" , "b", "c", "d", "e" ,"f" , "g"]
+if newSimple[3] == newSimple[6] {
+    print("here")
+} else { print("false not same") }
+
+let alpha = "abcdef abc"
+let alphaArr = Array(alpha)
+print(alphaArr)
+
+
 print(subArray)
 print("element at index 2", subArray[2])
 print("count", subArray.count)
@@ -69,15 +79,33 @@ simple.append(9)
 print("current count", simple.count)
 print("current capacity", simple.capacity)
 
-var createdArray = Array(repeating: 0, count: 3)
+var createdArray = Array(repeating: 0, count: 2)
+var nextArray = Array(repeating: createdArray, count: 3)
+var nestArray = Array(repeating: nextArray, count: 3)
+print(nestArray)
+let flatArray = nestArray.flatMap({ $0 })
+let flatArrayAgain = flatArray.flatMap({ $0 })
+print("flatten", flatArray)
+print("flatten twice", flatArrayAgain)
+
+let optionalValueArr: [Any?] = [1, 3, [] ,nil, nil , 5]
+//print(optionalValueArr.flatMap({ $0 }))
+print("compact ", optionalValueArr.compactMap({ $0 }))
+
 createdArray.append(19)
 createdArray.append(contentsOf: [1,2,3])
 print(createdArray)
 
 // type of closure in map func type: (Element) -> Element
-let mappedArray = createdArray.map({ value in
-    return value * 2
-})
+let mappedArray: [(Int, Int)] = createdArray.enumerated().map { (index, value) in
+    print(index)
+    return (index, value)
+}
+print(mappedArray)
+
+let mappedArrayShortHand = createdArray.map { value in 6 }
+print(mappedArrayShortHand)
+
 /// same as above
 /// 1)
 var newArray: [Int] = []
@@ -85,9 +113,22 @@ for value in createdArray {
     newArray.append(value * 2)
 }
 /// 2)
+func myFunc(num: Int) -> Int {
+    return num * 2
+}
+
+
 let myClosure01: (Int) -> Int = { value in
     return value * 2
 }
+//myFunc    // can't have stand alone func
+myClosure01
+func myFunc(with closure: (Int) -> Int) -> Int {
+    return closure(10)
+}
+print("my func with closure", myFunc(with: myClosure01))
+
+
 let mappedArray01 = createdArray.map(myClosure01)
 /// 3)
 let mappedArray02 = createdArray.map { $0 * 2 }
