@@ -13,7 +13,9 @@ class Employee {
     var hoursWorked: Int = 0
     
     init() {}
-    init(skills: [Skill], payRate: PayRate) {}
+    init(skills: [Skill], payRate: PayRate) {
+        // Your code here
+    }
     
     func attempt(task: Task) -> Bool {
         return false

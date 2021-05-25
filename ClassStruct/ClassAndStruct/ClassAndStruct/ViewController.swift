@@ -41,6 +41,7 @@ class ViewController: UIViewController {
          hoursWorked: Int
              • Can't work more than 40 hours a week
      - Functions
+         init Function ()
          attempt(task: Task) -> Bool
              • Task can be attempted if employee has skillReq and timeReq
              • Add the hours required to finish task to employee's hoursWorked
