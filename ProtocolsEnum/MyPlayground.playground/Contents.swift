@@ -117,7 +117,7 @@ club.validateCustomers()
 
 
 protocol Displayable {
-    var title: String? { get }
+    var title: String? { get set }
     var subtitle: String { get }
     var imageURL: String { get }
     
@@ -130,6 +130,7 @@ struct ProductItem: Displayable {
     var subtitle: String
     var imageURL: String
     func getBlankTitle() -> String {
+
         return "Product title"
     }
 }
