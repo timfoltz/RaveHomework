@@ -28,6 +28,7 @@ struct House: Home {
     }
     
     var rooms: [Room]?
+<<<<<<< HEAD
     
     var needsRepair: Bool { get { return self.neededRepair()}}//uses helper function "neededRepair"
     func neededRepair() -> Bool { //built helper function to check if ANY room needs repair
@@ -41,6 +42,12 @@ struct House: Home {
             }
         }
         return false
+=======
+    var needsRepair: Bool {
+        get {
+            return true
+        }
+>>>>>>> c1ff704d2b8d0a2c221c7324111a850f9bb8a1a5
     }
     func getValue() -> Int {
         var value = 0
