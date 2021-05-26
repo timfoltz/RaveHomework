@@ -8,7 +8,16 @@
 import Foundation
 
 /// Get artistName, name, and releaseDate
-struct MusicResponse {
-    
+struct MusicResponse: Codable {
+    struct Feed: Codable {
+//        let title: String
+        struct Results: Codable {
+            let artistName: String
+            let releaseDate: String
+            let name: String
+        }
+        var results: [Results]
+    }
+    var feed: Feed
 }
 

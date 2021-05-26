@@ -22,13 +22,20 @@ class ViewController: UIViewController {
         print(drinks ?? "")
         
         let musics = getMusics()
-        print(musics ?? "")
+//        print(musics ?? "")
+        let newMusic = musics.results
+        for x in newMusic {
+            print(x.name, x.artistName, x.releaseDate)
+            }
+            
+        }
         
 // Todo: get any reponse, passing in fileName
 //        let models: JokeResponse? = getAnyResponse(fileName: "JokeResponse")
 //        print(models ?? "")
 
     }
+    let decoder = JSONDecoder()
     
     func getJokes() -> JokeResponse? {
         /// Getting path to file
@@ -39,7 +46,7 @@ class ViewController: UIViewController {
         print("jsonData", jsonData!)
         
         /// Decoding from DATA type to a custom struct
-        let decoder = JSONDecoder()
+//        let decoder = JSONDecoder()
         let jokes = try! decoder.decode(JokeResponse.self, from: jsonData!)
         
         return jokes
@@ -47,19 +54,31 @@ class ViewController: UIViewController {
     
     /// All these functions are very similar...
     func getShows() -> ShowResponse? {
-        return nil
+        let bundlePath = Bundle.main.path(forResource: "ShowResponse", ofType: "json")
+        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
+        print("jsonData", jsonData!)
+        let shows = try! decoder.decode(ShowResponse.self, from: jsonData!)
+        return  shows
     }
     
     func getDrinks() -> DrinkResponse? {
-        return nil
+        let bundlePath = Bundle.main.path(forResource: "DrinkResponse", ofType: "json")
+        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
+        print("jsonData", jsonData!)
+        let drinks = try! decoder.decode(DrinkResponse.self, from: jsonData!)
+        return drinks
     }
     
-    func getMusics() -> MusicResponse? {
-        return nil
+    func getMusics() -> MusicResponse.Feed {
+        let bundlePath = Bundle.main.path(forResource: "MusicResponse", ofType: "json")
+        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
+        print("jsonData", jsonData!)
+        let shows = try! decoder.decode(MusicResponse.self, from: jsonData!)
+        return shows.feed
     }
     
     func getAnyResponse(fileName: String) {
     }
 
-}
+
 

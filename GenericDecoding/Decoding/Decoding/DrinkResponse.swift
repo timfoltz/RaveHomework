@@ -9,6 +9,6 @@
 import Foundation
 
 /// Get all fields
-struct DrinkResponse {
-    
+struct DrinkResponse: Decodable {
+    let drinks: [[String:String]]
 }

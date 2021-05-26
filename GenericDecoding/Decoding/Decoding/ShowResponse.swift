@@ -9,6 +9,8 @@
 import Foundation
 
 /// Get name, summary, and genre
-struct ShowResponse {
-    
+struct ShowResponse: Decodable {
+    let name: String
+    let summary: String
+    let genres: [String]
 }
