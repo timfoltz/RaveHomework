@@ -87,7 +87,7 @@ class protocolsEnumTests: XCTestCase {
     func testHouseHasRooms() {
         let house = House()
         let rooms = house.rooms
-        let result = rooms is [Room]
+        let result = rooms is [Room]?
         XCTAssert(result, "\(result) should be true")
     }
     

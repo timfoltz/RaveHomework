@@ -24,7 +24,11 @@ import UIKit
  */
 struct House {
     var rooms: [Room]?
-    var needsRepair: Bool = false
+    var needsRepair: Bool {
+        get {
+            return true
+        }
+    }
     func getValue() -> Int {
         return 0
     }
