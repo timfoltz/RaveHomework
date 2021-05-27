@@ -45,6 +45,10 @@ class ViewController: UIViewController {
         let task = URLSession.shared.dataTask(with: url) { d,r,e in
             guard let data = d else { return }
             print(data) // decode with JSONDecoder
+            
+            URLSession.shared.dataTask(with: self.url) { d,r,e in
+                print("this")
+            }.resume()
             let decodedDataName = "chuck norris" // decoded with decodabel
             DispatchQueue.main.async {
                 self.label.text = decodedDataName
