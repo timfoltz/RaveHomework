@@ -78,6 +78,11 @@ class ViewController: UIViewController {
     }
     
     func getAnyResponse(fileName: String) {
+        let bundlePath = Bundle.main.path(forResource: fileName, ofType: "json")
+        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
+        print("jsonData", jsonData!)
+        let response = try! decoder.decode(fileName.self, from: jsonData!)
+        return response
     }
 
 
