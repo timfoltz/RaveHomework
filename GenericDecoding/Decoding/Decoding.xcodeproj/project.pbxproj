@@ -21,6 +21,7 @@
 		9E54CC29265E7C7100C2B5E7 /* JokeResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E54CC27265E7C7100C2B5E7 /* JokeResponse.json */; };
 		9E54CC2C265E7C8600C2B5E7 /* DrinkResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = 9E54CC2A265E7C8600C2B5E7 /* DrinkResponse.json */; };
 		9E54CC2D265E7C8600C2B5E7 /* DrinkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E54CC2B265E7C8600C2B5E7 /* DrinkResponse.swift */; };
+		9E58F78A2660FDCF008144FA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E58F7892660FDCF008144FA /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		9E54CC27265E7C7100C2B5E7 /* JokeResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = JokeResponse.json; sourceTree = "<group>"; };
 		9E54CC2A265E7C8600C2B5E7 /* DrinkResponse.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = DrinkResponse.json; sourceTree = "<group>"; };
 		9E54CC2B265E7C8600C2B5E7 /* DrinkResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrinkResponse.swift; sourceTree = "<group>"; };
+		9E58F7892660FDCF008144FA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				9E54CC07265E7B1D00C2B5E7 /* ViewController.swift */,
+				9E58F7892660FDCF008144FA /* Constants.swift */,
 				9E54CC1A265E7C0B00C2B5E7 /* JokeModel */,
 				9E54CC1D265E7C2400C2B5E7 /* DrinkModel */,
 				9E54CC1C265E7C1C00C2B5E7 /* ShowModel */,
@@ -212,6 +215,7 @@
 				9E54CC06265E7B1D00C2B5E7 /* SceneDelegate.swift in Sources */,
 				9E54CC24265E7C6900C2B5E7 /* MusicResponse.swift in Sources */,
 				9E54CC28265E7C7100C2B5E7 /* JokeResponse.swift in Sources */,
+				9E58F78A2660FDCF008144FA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -53,6 +53,20 @@ class ViewController: UIViewController {
     }
     
     /// All these functions are very similar...
+    func getJokesFromAPI(completion: @escaping (JokeResponse) -> Void) {
+        let url = URL(string: Constants.jokeAddress)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { fatalError() }
+            
+            let decoder = JSONDecoder()
+            let decodedDrinks = try! decoder.decode(JokeResponse.self, from: data)
+            
+            completion(decodedDrinks)
+            
+        }
+        task.resume()
+    }
+    
     func getShows() -> ShowResponse? {
         let bundlePath = Bundle.main.path(forResource: "ShowResponse", ofType: "json")
         let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
@@ -77,6 +91,7 @@ class ViewController: UIViewController {
         return shows.feed
     }
     
+<<<<<<< HEAD
 //    func getAnyResponse(fileName: String) {
 //        let bundlePath = Bundle.main.path(forResource: fileName, ofType: "json")
 //        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
@@ -85,5 +100,25 @@ class ViewController: UIViewController {
 //        return response
 //    }
 
+=======
+    func getAnyResponse<T: Decodable>(fileName: String) -> T? {
+        let url = URL(string: Constants.drinkAddress)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { fatalError() }
+            
+            let decoder = JSONDecoder()
+            let decodedDrinks = try! decoder.decode(DrinkResponse.self, from: data)
+            
+//            return decodedDrinks
+            
+        }
+        task.resume()
+        return nil
+    }
+>>>>>>> 7975a4112af1dd70038ccea2b5b46663e3a280c6
 
+
+enum CustomError {
+    case noData
+}
 

@@ -9,6 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+<<<<<<< HEAD:APICall/luke34/luke34/ViewController.swift
     let label1: UILabel = UILabel()
     let label2: UILabel = UILabel()
 
@@ -26,6 +27,11 @@ class ViewController: UIViewController {
      )
      */
     let url = URL(string: "https://swapi.dev/api/people/1")!
+=======
+    let label: UILabel = UILabel()
+    let button: UIButton = UIButton()
+    let url = URL(string: "https://api.chucknorris.io/jokes/random")!
+>>>>>>> 7975a4112af1dd70038ccea2b5b46663e3a280c6:APICall/lukeApiCall/luke34/ViewController.swift
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,6 +81,7 @@ class ViewController: UIViewController {
     @objc func triggerButton() {
         let task = URLSession.shared.dataTask(with: url) { [self] d,r,e in
             guard let data = d else { return }
+<<<<<<< HEAD:APICall/luke34/luke34/ViewController.swift
             
             let decoder = JSONDecoder()
             let decoded = try! decoder.decode(SwapiResponse.self, from: data)
@@ -82,6 +89,14 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 self.label1.text = "Name: " + decoded.name
                 self.label2.text = "Hair Color: " + decoded.hair_color.uppercased()
+=======
+            print(data) // decode with JSONDecoder
+            
+            let decodedJoke = try! JSONDecoder().decode(Joke.self, from: data)
+            
+            DispatchQueue.main.async {
+                self.label.text = decodedJoke.value
+>>>>>>> 7975a4112af1dd70038ccea2b5b46663e3a280c6:APICall/lukeApiCall/luke34/ViewController.swift
             }
         }
         task.resume()
@@ -91,3 +106,6 @@ class ViewController: UIViewController {
 
 }
 
+struct Joke: Decodable {
+    let value: String
+}
