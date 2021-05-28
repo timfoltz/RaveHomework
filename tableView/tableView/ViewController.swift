@@ -28,9 +28,15 @@ class ViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        configureTableView()
         getData()
 //        tableView.dataSource = self    //implicitly set
 //        print(model, "viewDidLoad: printing model")
+    }
+    
+    func configureTableView() {
+        let nib = UINib(nibName: DrinkCell.identifier, bundle: nil)
+        tableView.register(nib, forCellReuseIdentifier: DrinkCell.identifier)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -40,11 +46,11 @@ class ViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = UITableViewCell()
-        let textName = model?.drinks[indexPath.row].name
-        cell.textLabel?.text = textName
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: DrinkCell.identifier, for: indexPath) as? DrinkCell
+        else { return UITableViewCell() }
+        let drinkItem = model?.drinks[indexPath.row]
+        cell.configure(drinkItem: drinkItem)
         return cell
-        
     }
     
     
