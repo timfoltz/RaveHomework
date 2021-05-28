@@ -16,12 +16,12 @@ let url = URL(string: urlString)!
 //    }
 //}
 
-URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
-    guard let data = data else { fatalError()}
-    
-    let decodedData = //decode here
-        
-    print(decodedData.name)
-})
+//URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) in
+//    guard let data = data else { fatalError()}
+//    
+//    let decodedData = //decode here
+//        
+//    print(decodedData.name)
+//})
 
 

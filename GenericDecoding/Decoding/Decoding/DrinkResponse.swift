@@ -9,6 +9,26 @@
 import Foundation
 
 /// Get all fields
-struct DrinkResponse {
-    
+struct DrinkResponse: Decodable {
+    let drinks: [DrinkItem]
 }
+
+struct DrinkItem: Decodable {
+    
+    enum MyCustomKeys: String, CodingKey {
+        case name = "strDrink"
+        case imageURL = "strDrinkThumb"
+        case idDrink
+    }
+    
+    let name: String        // name maps to strDrink
+    let imageURL: String   // imageURL maps to strDrinkThumb
+    let idDrink: String
+}
+
+//myDrink.name
+//myDrink.imageURL
+
+//strDrink": "1-900-FUK-MEUP",
+//"strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/uxywyw1468877224.jpg",
+//"idDrink": "15395"

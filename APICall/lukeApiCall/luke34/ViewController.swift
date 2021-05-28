@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     let label: UILabel = UILabel()
     let button: UIButton = UIButton()
-    let url = URL(string: "https://www.google.com")!
+    let url = URL(string: "https://api.chucknorris.io/jokes/random")!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +46,10 @@ class ViewController: UIViewController {
             guard let data = d else { return }
             print(data) // decode with JSONDecoder
             
-            URLSession.shared.dataTask(with: self.url) { d,r,e in
-                print("this")
-            }.resume()
-            let decodedDataName = "chuck norris" // decoded with decodabel
+            let decodedJoke = try! JSONDecoder().decode(Joke.self, from: data)
+            
             DispatchQueue.main.async {
-                self.label.text = decodedDataName
+                self.label.text = decodedJoke.value
             }
         }
         task.resume()
@@ -61,3 +59,6 @@ class ViewController: UIViewController {
 
 }
 
+struct Joke: Decodable {
+    let value: String
+}

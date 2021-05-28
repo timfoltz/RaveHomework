@@ -46,6 +46,20 @@ class ViewController: UIViewController {
     }
     
     /// All these functions are very similar...
+    func getJokesFromAPI(completion: @escaping (JokeResponse) -> Void) {
+        let url = URL(string: Constants.jokeAddress)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { fatalError() }
+            
+            let decoder = JSONDecoder()
+            let decodedDrinks = try! decoder.decode(JokeResponse.self, from: data)
+            
+            completion(decodedDrinks)
+            
+        }
+        task.resume()
+    }
+    
     func getShows() -> ShowResponse? {
         return nil
     }
@@ -58,8 +72,24 @@ class ViewController: UIViewController {
         return nil
     }
     
-    func getAnyResponse(fileName: String) {
+    func getAnyResponse<T: Decodable>(fileName: String) -> T? {
+        let url = URL(string: Constants.drinkAddress)!
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else { fatalError() }
+            
+            let decoder = JSONDecoder()
+            let decodedDrinks = try! decoder.decode(DrinkResponse.self, from: data)
+            
+//            return decodedDrinks
+            
+        }
+        task.resume()
+        return nil
     }
 
+}
+
+enum CustomError {
+    case noData
 }
 
