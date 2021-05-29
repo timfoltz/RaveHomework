@@ -38,7 +38,7 @@ class ViewController: UITableViewController {
         return model?.drinks.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt  sindexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt  indexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         let textName = model?.drinks[indexPath.row].name
