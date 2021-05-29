@@ -9,9 +9,9 @@ import UIKit
 
 class ViewController: UITableViewController {
 
-    let urlAddress = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Gin"
+    let urlAddress = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka"
     var model: DrinkModel? {
-        // Property observer: is trigged when new value is set
+        // Property observer: is trigged when new value is setr
         didSet {
             // update the UI
             DispatchQueue.main.async {
@@ -38,7 +38,7 @@ class ViewController: UITableViewController {
         return model?.drinks.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt  sindexPath: IndexPath) -> UITableViewCell {
         
         let cell = UITableViewCell()
         let textName = model?.drinks[indexPath.row].name
