@@ -11,34 +11,35 @@ class ViewController: UITableViewController {
 
     let urlAddress = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=Vodka"
     var model: DrinkModel? {
+<<<<<<< HEAD
         // Property observer: is trigged when new value is setr
+=======
+>>>>>>> d91f60f8ed264191c63e32bf11915834841a88d7
         didSet {
-            // update the UI
+            dataSource.model = model
+            ImageCache.shared.downloadAllImages(for: model)
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
     }
-    
-//    var fakeData = [
-//        "first",
-//        "second",
-//        "third"
-//    ]
+    var dataSource = DrinkDataSource()
+    var delegate = DrinkDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         getData()
-//        tableView.dataSource = self    //implicitly set
-//        print(model, "viewDidLoad: printing model")
     }
     
     func configureTableView() {
         let nib = UINib(nibName: DrinkCell.identifier, bundle: nil)
         tableView.register(nib, forCellReuseIdentifier: DrinkCell.identifier)
+        tableView.dataSource = dataSource
+        tableView.delegate = delegate
     }
     
+<<<<<<< HEAD
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return model?.drinks.count ?? 0
@@ -54,19 +55,12 @@ class ViewController: UITableViewController {
     }
     
     
+=======
+>>>>>>> d91f60f8ed264191c63e32bf11915834841a88d7
     func getData() {
-        let url = URL(string: urlAddress)!
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data else { return }
-            do {
-                let decodedDrinks = try JSONDecoder().decode(DrinkModel.self, from: data)
-                self.model = decodedDrinks
-            } catch (let error) {
-                print(error.localizedDescription)
-            }
+        DrinkAPIManager.shared.setURLResource(urlString: urlAddress)
+        DrinkAPIManager.shared.getDataParseJSON { decodedModel in
+            self.model = decodedModel
         }
-        task.resume()
     }
-
 }
-

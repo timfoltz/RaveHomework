@@ -19,8 +19,9 @@ class DrinkCell: UITableViewCell {
         topLabel.numberOfLines = 0
         topLabel.text = drinkItem?.name
         bottomLabel.text = drinkItem?.idDrink
-        let urlString = drinkItem?.imageURL
-        setImage(urlString: urlString)
+//        let urlString = drinkItem?.imageURL
+//        setImage(urlString: urlString)
+//        getImageFromCache(urlString: urlString!)
     }
     
     func setImage(urlString: String?) {
@@ -37,6 +38,12 @@ class DrinkCell: UITableViewCell {
                     }
                 }.resume()
             }
+        }
+    }
+    
+    func getImageFromCache(urlString: String) {
+        ImageCache.shared.loadImage(from: urlString) { image in
+            self.drinkView.image = image
         }
     }
     
