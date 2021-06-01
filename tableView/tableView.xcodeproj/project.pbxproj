@@ -16,6 +16,10 @@
 		9E58F7E2266123D8008144FA /* DrinkModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E58F7E1266123D8008144FA /* DrinkModel.swift */; };
 		9E58F7EE26615B70008144FA /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E58F7EC26615B70008144FA /* DrinkCell.swift */; };
 		9E58F7EF26615B70008144FA /* DrinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9E58F7ED26615B70008144FA /* DrinkCell.xib */; };
+		9ED2962026658BA700B02E20 /* NetworkingError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2961F26658BA700B02E20 /* NetworkingError.swift */; };
+		9ED296222665ACD500B02E20 /* DrinkAPIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED296212665ACD500B02E20 /* DrinkAPIManager.swift */; };
+		9ED296242665B2BF00B02E20 /* DrinkDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED296232665B2BF00B02E20 /* DrinkDataSource.swift */; };
+		9ED2962E2665C7F900B02E20 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ED2962D2665C7F900B02E20 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		9E58F7E1266123D8008144FA /* DrinkModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkModel.swift; sourceTree = "<group>"; };
 		9E58F7EC26615B70008144FA /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		9E58F7ED26615B70008144FA /* DrinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinkCell.xib; sourceTree = "<group>"; };
+		9ED2961F26658BA700B02E20 /* NetworkingError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingError.swift; sourceTree = "<group>"; };
+		9ED296212665ACD500B02E20 /* DrinkAPIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkAPIManager.swift; sourceTree = "<group>"; };
+		9ED296232665B2BF00B02E20 /* DrinkDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkDataSource.swift; sourceTree = "<group>"; };
+		9ED2962D2665C7F900B02E20 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,10 +71,12 @@
 			isa = PBXGroup;
 			children = (
 				9E58F7D22661237B008144FA /* Main.storyboard */,
-				9E58F7D02661237A008144FA /* ViewController.swift */,
+				9ED2962F2665DF1A00B02E20 /* Model */,
 				9E58F7EB26615B38008144FA /* Cell */,
-				9E58F7E3266123DD008144FA /* Model */,
+				9ED2961D26658A0E00B02E20 /* Controller */,
+				9ED296252665B6AD00B02E20 /* Networking */,
 				9E58F7E0266123A4008144FA /* SupportingFiles */,
+				9ED2961E26658A1900B02E20 /* Utilities */,
 			);
 			path = tableView;
 			sourceTree = "<group>";
@@ -83,14 +93,6 @@
 			name = SupportingFiles;
 			sourceTree = "<group>";
 		};
-		9E58F7E3266123DD008144FA /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				9E58F7E1266123D8008144FA /* DrinkModel.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		9E58F7EB26615B38008144FA /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +100,40 @@
 				9E58F7ED26615B70008144FA /* DrinkCell.xib */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		9ED2961D26658A0E00B02E20 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9E58F7D02661237A008144FA /* ViewController.swift */,
+				9ED296232665B2BF00B02E20 /* DrinkDataSource.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		9ED2961E26658A1900B02E20 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				9ED2961F26658BA700B02E20 /* NetworkingError.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		9ED296252665B6AD00B02E20 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9ED296212665ACD500B02E20 /* DrinkAPIManager.swift */,
+				9ED2962D2665C7F900B02E20 /* ImageCache.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		9ED2962F2665DF1A00B02E20 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9E58F7E1266123D8008144FA /* DrinkModel.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -171,10 +207,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9ED2962E2665C7F900B02E20 /* ImageCache.swift in Sources */,
 				9E58F7E2266123D8008144FA /* DrinkModel.swift in Sources */,
 				9E58F7EE26615B70008144FA /* DrinkCell.swift in Sources */,
 				9E58F7D12661237A008144FA /* ViewController.swift in Sources */,
+				9ED2962026658BA700B02E20 /* NetworkingError.swift in Sources */,
 				9E58F7CD2661237A008144FA /* AppDelegate.swift in Sources */,
+				9ED296242665B2BF00B02E20 /* DrinkDataSource.swift in Sources */,
+				9ED296222665ACD500B02E20 /* DrinkAPIManager.swift in Sources */,
 				9E58F7CF2661237A008144FA /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

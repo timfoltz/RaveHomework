@@ -73,18 +73,19 @@ class ViewController: UIViewController {
     }
     
     func getAnyResponse<T: Decodable>(fileName: String) -> T? {
-        let url = URL(string: Constants.drinkAddress)!
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
-            guard let data = data else { fatalError() }
-            
-            let decoder = JSONDecoder()
-            let decodedDrinks = try! decoder.decode(DrinkResponse.self, from: data)
-            
-//            return decodedDrinks
-            
-        }
-        task.resume()
-        return nil
+        /// Getting path to file
+        let bundlePath = Bundle.main.path(forResource: fileName, ofType: "json")
+        
+        /// Getting DATA type from the string in that file
+        let jsonData = try! String(contentsOfFile: bundlePath!).data(using: .utf8)
+        print("jsonData", jsonData!)
+        
+        /// Decoding from DATA type to a custom struct
+        let decoder = JSONDecoder()
+        let jokes = try! decoder.decode(JokeResponse.self, from: jsonData!)
+        
+        guard let jokes = jokes as? T else { return nil }
+        return jokes
     }
 
 }
