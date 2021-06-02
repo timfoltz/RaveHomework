@@ -27,6 +27,7 @@ class MusicViewController: UIViewController {
     }
     
     func configureTableView() {
+        
         tableView.dataSource = self
         tableView.delegate = self
         let nib = UINib(nibName: MusicCell.identifier, bundle: nil)
