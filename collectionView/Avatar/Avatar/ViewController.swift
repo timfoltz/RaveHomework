@@ -59,6 +59,22 @@ class ViewController: UIViewController {
         DispatchQueue.global().async {
             self.getCharacters(from: 1, to: 20)
         }
+        
+        let ints = [1,2,3,4]
+
+        let str = ints.map { String($0)}
+        print(String(-100))
+        let container = UIView()
+        
+        let rect = UIView()
+        
+        container.addSubview(rect)
+        container.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
+        rect.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+        rect.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
+        print(rect.frame)
+        print(rect.bounds)
+    
     }
     
     func configureCollectionView() {
