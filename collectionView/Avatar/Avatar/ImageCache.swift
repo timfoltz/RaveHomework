@@ -18,7 +18,7 @@ class ImageCache {
         let imageUrl = urlString as NSString
         if let cachedImage = cache.object(forKey: imageUrl) {
             DispatchQueue.main.async {
-                print("loading from cache")
+//                print("loading from cache")
                 completionHandler?(cachedImage)
             }
         } else {
@@ -31,7 +31,7 @@ class ImageCache {
                     self.cache.setObject(image, forKey: urlString as NSString)
                     DispatchQueue.main.async {
                         completionHandler?(image)
-                        print("loading from API")
+//                        print("loading from API")
                     }
                 }
             }

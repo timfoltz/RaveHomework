@@ -59,22 +59,6 @@ class ViewController: UIViewController {
         DispatchQueue.global().async {
             self.getCharacters(from: 1, to: 20)
         }
-        
-        let ints = [1,2,3,4]
-
-        let str = ints.map { String($0)}
-        print(String(-100))
-        let container = UIView()
-        
-        let rect = UIView()
-        
-        container.addSubview(rect)
-        container.frame = CGRect(x: 0, y: 0, width: 500, height: 500)
-        rect.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
-        rect.transform = CGAffineTransform(scaleX: 2.0, y: 2.0)
-        print(rect.frame)
-        print(rect.bounds)
-    
     }
     
     func configureCollectionView() {
@@ -118,18 +102,18 @@ class ViewController: UIViewController {
         let nextPage = (model?.count ?? 0) / 20 + 1
         getCharacters(at: nextPage) { newChars in
             self.model? += newChars
-            print("New model count: \(self.model?.count ?? 0)")
+//            print("New model count: \(self.model?.count ?? 0)")
             self.removeSpinnerView()
         }
     }
     
     func preLoadImageCache() {
         guard let model = model else { return }
-        print("model count \(model.count)")
+//        print("model count \(model.count)")
         for char in model {
             if let photoUrl = char.photoUrl {
                 ImageCache.shared.loadImage(from: photoUrl, completionHandler: { _ in
-                    print("preloading image to cache for: \(char.name ?? "")")
+//                    print("preloading image to cache for: \(char.name ?? "")")
                 })
             }
         }
@@ -149,6 +133,7 @@ extension ViewController: UICollectionViewDataSource {
             ImageCache.shared.loadImage(from: charModel.photoUrl ?? "") { image in
                 if let visibleCell = collectionView.cellForItem(at: indexPath) as? AvatarCell {
                     visibleCell.imageView.image = image
+                    print(visibleCell, "visible cell")
                 }
             }
         }
@@ -172,11 +157,11 @@ extension ViewController: UICollectionViewDelegate {
     
 }
 
-extension ViewController: UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 200, height: 220)
-    }
-}
+//extension ViewController: UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+//        return CGSize(width: 100, height: 100)
+//    }
+//}
 
 extension ViewController {
     func addSpinnerView() {
