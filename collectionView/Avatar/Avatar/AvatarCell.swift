@@ -13,7 +13,10 @@ class AvatarCell: UICollectionViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var affiliationLabel: UILabel!
     
+    @IBOutlet weak var widthConstraint: NSLayoutConstraint!
+    
     func configure(model: Character) {
+        widthConstraint.constant = 250
         nameLabel.text = model.getName()
         affiliationLabel.text = model.getAffiliation()
         backgroundColor = model.getColor()

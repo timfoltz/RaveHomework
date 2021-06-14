@@ -23,10 +23,10 @@ class ConcreteAPIManager: AvatarAPIManager {
     }
     
     func makeRequest(to url: URL, completion: @escaping (Data?) -> Void) {
-        print("fetching from \(url.absoluteString)")
+//        print("fetching from \(url.absoluteString)")
         URLSession.shared.dataTask(with: url) { data, response, error in
             completion(data)
-            print("DONE fetching from \(url.absoluteString)")
+//            print("DONE fetching from \(url.absoluteString)")
         }.resume()
     }
     
