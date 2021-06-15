@@ -33,7 +33,6 @@ class ViewController: UIViewController {
             wself.locationLabel.text = wself.userViewModel.location
         }
     }
-
     
     deinit {
         print("de init called")
