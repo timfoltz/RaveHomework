@@ -18,8 +18,19 @@
 		9EA12FDB2678EE3F00379558 /* DrinkCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA12FD92678EE3F00379558 /* DrinkCell.swift */; };
 		9EA12FDC2678EE3F00379558 /* DrinkCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9EA12FDA2678EE3F00379558 /* DrinkCell.xib */; };
 		9EA12FDF2678EEFA00379558 /* CellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EA12FDE2678EEFA00379558 /* CellViewModel.swift */; };
-		9EA12FE32679274000379558 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 9EA12FE22679273F00379558 /* .gitignore */; };
+		9EE20C1F267B778500658039 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE20C1E267B778500658039 /* APIService.swift */; };
+		9EE20C27267B7B1000658039 /* drinksMvvmTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9EE20C26267B7B1000658039 /* drinksMvvmTests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9EE20C29267B7B1000658039 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9EA12FB32678E71500379558 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9EA12FBA2678E71600379558;
+			remoteInfo = drinksMvvm;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		9EA12FBB2678E71600379558 /* drinksMvvm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = drinksMvvm.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -35,11 +46,21 @@
 		9EA12FD92678EE3F00379558 /* DrinkCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkCell.swift; sourceTree = "<group>"; };
 		9EA12FDA2678EE3F00379558 /* DrinkCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DrinkCell.xib; sourceTree = "<group>"; };
 		9EA12FDE2678EEFA00379558 /* CellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellViewModel.swift; sourceTree = "<group>"; };
-		9EA12FE22679273F00379558 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		9EE20C1E267B778500658039 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		9EE20C24267B7B1000658039 /* drinksMvvmTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = drinksMvvmTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		9EE20C26267B7B1000658039 /* drinksMvvmTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = drinksMvvmTests.swift; sourceTree = "<group>"; };
+		9EE20C28267B7B1000658039 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		9EA12FB82678E71600379558 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EE20C21267B7B1000658039 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -52,8 +73,8 @@
 		9EA12FB22678E71500379558 = {
 			isa = PBXGroup;
 			children = (
-				9EA12FE22679273F00379558 /* .gitignore */,
 				9EA12FBD2678E71600379558 /* drinksMvvm */,
+				9EE20C25267B7B1000658039 /* drinksMvvmTests */,
 				9EA12FBC2678E71600379558 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -62,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				9EA12FBB2678E71600379558 /* drinksMvvm.app */,
+				9EE20C24267B7B1000658039 /* drinksMvvmTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,11 +91,12 @@
 		9EA12FBD2678E71600379558 /* drinksMvvm */ = {
 			isa = PBXGroup;
 			children = (
+				9EA12FC42678E71600379558 /* Main.storyboard */,
 				9EA12FE12678F04400379558 /* Controller */,
 				9EA12FE02678F03A00379558 /* ViewModel */,
 				9EA12FDD2678EE4300379558 /* Cell */,
 				9EA12FD82678E82E00379558 /* Model */,
-				9EA12FC42678E71600379558 /* Main.storyboard */,
+				9EE20C1D267B777600658039 /* Networking */,
 				9EA12FD32678E7AB00379558 /* Supporting */,
 			);
 			path = drinksMvvm;
@@ -125,6 +148,23 @@
 			name = Controller;
 			sourceTree = "<group>";
 		};
+		9EE20C1D267B777600658039 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9EE20C1E267B778500658039 /* APIService.swift */,
+			);
+			name = Networking;
+			sourceTree = "<group>";
+		};
+		9EE20C25267B7B1000658039 /* drinksMvvmTests */ = {
+			isa = PBXGroup;
+			children = (
+				9EE20C26267B7B1000658039 /* drinksMvvmTests.swift */,
+				9EE20C28267B7B1000658039 /* Info.plist */,
+			);
+			path = drinksMvvmTests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +185,24 @@
 			productReference = 9EA12FBB2678E71600379558 /* drinksMvvm.app */;
 			productType = "com.apple.product-type.application";
 		};
+		9EE20C23267B7B1000658039 /* drinksMvvmTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9EE20C2B267B7B1000658039 /* Build configuration list for PBXNativeTarget "drinksMvvmTests" */;
+			buildPhases = (
+				9EE20C20267B7B1000658039 /* Sources */,
+				9EE20C21267B7B1000658039 /* Frameworks */,
+				9EE20C22267B7B1000658039 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9EE20C2A267B7B1000658039 /* PBXTargetDependency */,
+			);
+			name = drinksMvvmTests;
+			productName = drinksMvvmTests;
+			productReference = 9EE20C24267B7B1000658039 /* drinksMvvmTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -156,6 +214,10 @@
 				TargetAttributes = {
 					9EA12FBA2678E71600379558 = {
 						CreatedOnToolsVersion = 12.5;
+					};
+					9EE20C23267B7B1000658039 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 9EA12FBA2678E71600379558;
 					};
 				};
 			};
@@ -173,6 +235,7 @@
 			projectRoot = "";
 			targets = (
 				9EA12FBA2678E71600379558 /* drinksMvvm */,
+				9EE20C23267B7B1000658039 /* drinksMvvmTests */,
 			);
 		};
 /* End PBXProject section */
@@ -182,11 +245,17 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9EA12FE32679274000379558 /* .gitignore in Resources */,
 				9EA12FCB2678E71700379558 /* LaunchScreen.storyboard in Resources */,
 				9EA12FC82678E71700379558 /* Assets.xcassets in Resources */,
 				9EA12FDC2678EE3F00379558 /* DrinkCell.xib in Resources */,
 				9EA12FC62678E71600379558 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9EE20C22267B7B1000658039 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,11 +272,28 @@
 				9EA12FDF2678EEFA00379558 /* CellViewModel.swift in Sources */,
 				9EA12FD72678E7F900379558 /* DrinkModel.swift in Sources */,
 				9EA12FDB2678EE3F00379558 /* DrinkCell.swift in Sources */,
+				9EE20C1F267B778500658039 /* APIService.swift in Sources */,
 				9EA12FD52678E7E600379558 /* DrinksViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		9EE20C20267B7B1000658039 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9EE20C27267B7B1000658039 /* drinksMvvmTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9EE20C2A267B7B1000658039 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9EA12FBA2678E71600379558 /* drinksMvvm */;
+			targetProxy = 9EE20C29267B7B1000658039 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		9EA12FC42678E71600379558 /* Main.storyboard */ = {
@@ -383,6 +469,46 @@
 			};
 			name = Release;
 		};
+		9EE20C2C267B7B1000658039 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3T46735XP;
+				INFOPLIST_FILE = drinksMvvmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lukeRave.drinksMvvmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/drinksMvvm.app/drinksMvvm";
+			};
+			name = Debug;
+		};
+		9EE20C2D267B7B1000658039 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = D3T46735XP;
+				INFOPLIST_FILE = drinksMvvmTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = lukeRave.drinksMvvmTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/drinksMvvm.app/drinksMvvm";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -400,6 +526,15 @@
 			buildConfigurations = (
 				9EA12FD02678E71700379558 /* Debug */,
 				9EA12FD12678E71700379558 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9EE20C2B267B7B1000658039 /* Build configuration list for PBXNativeTarget "drinksMvvmTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9EE20C2C267B7B1000658039 /* Debug */,
+				9EE20C2D267B7B1000658039 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

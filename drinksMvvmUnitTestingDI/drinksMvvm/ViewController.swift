@@ -17,20 +17,6 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         setupVM()
         configureTableView()
-        let string = "2021-06-15 11:22:59"
-        let datFormatter = DateFormatter()
-        datFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        var date = datFormatter.date(from: string)
-        if let date = date {
-            print("old date", datFormatter.string(from: date))
-            
-        }
-        let timeInterval = TimeInterval(7200)
-        date?.addTimeInterval(timeInterval)
-        if let date = date {
-            print("new date")
-            print(datFormatter.string(from: date ))
-        }
     }
     
     func configureTableView() {
@@ -57,11 +43,10 @@ extension ViewController: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: DrinkCell.identifier, for: indexPath) as? DrinkCell else {
             return UITableViewCell()
         }
-        // Create viewmodel for each cell
-//        cell.nameLabel.text = CellViewModel
-        let cellVM = drinksViewModel.createCellViewModel(for: indexPath.row)
         
+        let cellVM = drinksViewModel.createCellViewModel(for: indexPath.row)
         cell.configure(viewModel: cellVM)
+        
         return cell
         
     }
