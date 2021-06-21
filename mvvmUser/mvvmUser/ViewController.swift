@@ -35,7 +35,6 @@ class ViewController: UIViewController {
         }
         print(userViewModel.fullName)
     }
-
     
     deinit {
         print("de init called")
