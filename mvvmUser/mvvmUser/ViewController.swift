@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     
     func setupVM() {
         userViewModel = UserViewModel()
+        print(userViewModel)
         
         userViewModel.updateUIClosure = { [weak self] in
             guard let wself = self else { return }
@@ -32,6 +33,7 @@ class ViewController: UIViewController {
             wself.accountValueLabel.text = wself.userViewModel.accountValue
             wself.locationLabel.text = wself.userViewModel.location
         }
+        print(userViewModel.fullName)
     }
 
     
